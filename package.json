@@ -37,7 +37,6 @@
     "docs:frontend": "typedoc --out ./docs/frontend ./src/frontend/index.tsx --tsconfig ./config/tsconfig.frontend.json",
     "docs:backend": "typedoc --out ./docs/backend ./src/backend/server.ts --tsconfig ./config/tsconfig.backend.json",
     "docs": "yarn run clean:docs && yarn run docs:frontend && yarn run docs:backend",
-    "file:info": "ls -lh package.json",
     "commit": "git-cz",
     "release": "standard-version && git push --follow-tags origin main"
   },
