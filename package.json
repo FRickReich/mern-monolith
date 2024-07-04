@@ -1,7 +1,7 @@
 {
   "name": "monolith-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fullstack Application with React frontend and Express.js backend using TypeScript.",
   "main": "index.js",
   "scripts": {
     "clean:install": "rimraf ./node_modules/ && rm ./yarn.lock",
