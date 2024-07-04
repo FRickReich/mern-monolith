@@ -1,6 +1,6 @@
 {
   "name": "monolith-2",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Fullstack Application with React frontend and Express.js backend using TypeScript.",
   "main": "index.js",
   "scripts": {
