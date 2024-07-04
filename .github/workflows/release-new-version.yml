@@ -29,6 +29,6 @@ jobs:
           git config --global user.name "<GITHUB BOT>"
           git config --global user.email "<>"
           npx standard-version
-          git push --follow-tags origin develop 
+          git push --follow-tags origin main 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
