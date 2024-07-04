@@ -1,4 +1,4 @@
-# envoii-fullstack application
+# fullstack application
 
 This application is a fullstack application with a frontend in React and a backend in Express.js using TypeScript. 
 
