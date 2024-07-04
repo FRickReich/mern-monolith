@@ -1,6 +1,6 @@
 {
   "name": "monolith-2",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Fullstack Application with React frontend and Express.js backend using TypeScript.",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "docs:backend": "typedoc --out ./docs/backend ./src/backend/server.ts --tsconfig ./config/tsconfig.backend.json",
     "docs": "yarn run clean:docs && yarn run docs:frontend && yarn run docs:backend",
     "commit": "git-cz",
-    "release": "standard-version && git push --follow-tags origin main",
+    "release": "standard-version",
     "storybook": "storybook dev -p 6006"
   },
   "keywords": [],
