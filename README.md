@@ -20,6 +20,14 @@ This script executes the following sub-scripts:
 - `clean:coverage`: Deletes the `coverage` directory.
 - `clean:install`: Deletes the `node_modules` directory and `yarn.lock` file.
 
+### Storybook
+
+to run storybook aside of development:
+
+```bash
+yarn run storybook
+```
+
 ### Build
 
 To build both the frontend and backend:
