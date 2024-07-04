@@ -19,16 +19,16 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install
+        run: yarn
 
       - name: Run tests
-        run: npm test
+        run: yarn run test
 
       - name: Create Release
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          npm run release
-          git push --follow-tags origin main
+          git config --global user.name "<GITHUB BOT>"
+          git config --global user.email "<>"
+          npx standard-version
+          git push --follow-tags origin develop 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

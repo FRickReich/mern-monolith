@@ -38,8 +38,8 @@
     "docs:backend": "typedoc --out ./docs/backend ./src/backend/server.ts --tsconfig ./config/tsconfig.backend.json",
     "docs": "yarn run clean:docs && yarn run docs:frontend && yarn run docs:backend",
     "file:info": "ls -lh package.json",
-    "commit": "cz",
-    "release": "standard-version"
+    "commit": "git-cz",
+    "release": "standard-version && git push --follow-tags origin main"
   },
   "keywords": [],
   "author": "",
@@ -73,6 +73,7 @@
     "nodemon": "^3.1.4",
     "prettier": "^3.3.2",
     "rimraf": "^5.0.7",
+    "semantic-release": "^24.0.0",
     "standard-version": "^9.5.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.5",
