@@ -12,6 +12,7 @@
     "build:frontend": "esbuild src/frontend/index.tsx --bundle --outfile=public/bundle.js --tsconfig=./config/tsconfig.frontend.json",
     "build:backend": "tsc --project ./config/tsconfig.backend.json",
     "build:prepare": "npm run format && npm run lint && npm run test",
+    "build:storybook": "storybook build",
     "build": "yarn run clean:build && yarn run build:frontend && yarn run build:backend",
     "watch:frontend": "esbuild src/frontend/index.tsx --bundle --outfile=public/bundle.js --tsconfig=./config/tsconfig.frontend.json --watch",
     "watch:backend": "nodemon --watch src/backend --exec ts-node src/backend/server.ts",
@@ -39,8 +40,7 @@
     "docs": "yarn run clean:docs && yarn run docs:frontend && yarn run docs:backend",
     "commit": "git-cz",
     "release": "standard-version && git push --follow-tags origin main",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "keywords": [],
   "author": "",
