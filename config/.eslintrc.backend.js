@@ -12,8 +12,11 @@ module.exports = {
     extends: [
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
+      'plugin:prettier/recommended',
     ],
+    plugins: ['prettier'],
     rules: {
+      'prettier/prettier': ['error', { useTabs: true, tabWidth: 4 }],
       // Hier können spezifische Regeln für Express.js hinzugefügt werden
     },
   };

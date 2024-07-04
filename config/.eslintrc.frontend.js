@@ -14,6 +14,7 @@ module.exports = {
       es6: true,
       node: true,
     },
+    plugins: ['prettier'],
     extends: [
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
@@ -23,6 +24,7 @@ module.exports = {
       'plugin:import/errors',
       'plugin:import/warnings',
       'plugin:import/typescript',
+      'plugin:prettier/recommended',
     ],
     settings: {
       react: {
@@ -30,6 +32,7 @@ module.exports = {
       },
     },
     rules: {
+      'prettier/prettier': ['error', { useTabs: true, tabWidth: 4 }],
       // Hier können spezifische Regeln für React hinzugefügt werden
     },
   };
