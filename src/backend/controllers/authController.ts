@@ -1,12 +1,12 @@
 // src/controllers/authController.ts
 
-import 'dotenv/config';
-import { Request, Response } from 'express';
-import { AuthService } from '../services/auth/AuthService';
-import { AuthServiceFactory } from '../services/auth/AuthServiceFactory';
+import "dotenv/config";
+import { Request, Response } from "express";
+import { AuthService } from "../services/auth/AuthService";
+import { AuthServiceFactory } from "../services/auth/AuthServiceFactory";
 
 const authService: AuthService = AuthServiceFactory.createAuthService(
-	process.env.AUTH_SERVICE || 'local',
+	process.env.AUTH_SERVICE || "local",
 );
 
 export const login = async (req: Request, res: Response) => {
@@ -15,6 +15,6 @@ export const login = async (req: Request, res: Response) => {
 		const token = await authService.login(username, password);
 		res.send({ token });
 	} catch (error) {
-		res.status(401).send('Login failed');
+		res.status(401).send("Login failed");
 	}
 };
