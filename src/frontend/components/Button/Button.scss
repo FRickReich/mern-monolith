@@ -1,0 +1,17 @@
+.Button {
+	border: 1px solid grey;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.25rem;
+	display: inline-block;
+	user-select: none;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba(lightgrey, 0.25);
+		}
+		
+		&:active {
+		background: rgba(lightgrey, 0.5);
+	}
+}
