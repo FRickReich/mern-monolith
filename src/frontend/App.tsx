@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
 	Navigate,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from './PrivateRoute';
 
-import { AuthProvider } from "./context/AuthContext";
-import ProtectedComponent from "./components/ProtectedComponent/ProtectedComponent";
-import LoginForm from "./components/LoginForm/LoginForm";
+import { AuthProvider } from './context/AuthContext';
+import ProtectedComponent from './components/ProtectedComponent/ProtectedComponent';
+import LoginForm from './components/LoginForm/LoginForm';
 
-import { NotFound, Dashboard } from "./pages";
-import Header from "./components/Header/Header";
+import { NotFound, Dashboard } from './pages';
+import Header from './components/Header/Header';
 
 const App: React.FC = () => {
 	return (
@@ -21,7 +21,6 @@ const App: React.FC = () => {
 			<AuthProvider>
 				<div className="App">
 					<Header />
-
 					<Routes>
 						<Route
 							path="/"
@@ -48,6 +47,7 @@ const App: React.FC = () => {
 						/>
 						<Route path="*" element={<NotFound />} />
 					</Routes>
+					test
 				</div>
 			</AuthProvider>
 		</Router>

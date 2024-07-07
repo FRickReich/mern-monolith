@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from "express";
-import { AuthService } from "../services/auth/AuthService";
-import { AuthServiceFactory } from "../services/auth/AuthServiceFactory";
+import { Request, Response, NextFunction } from 'express';
+import { AuthService } from '../services/auth/AuthService';
+import { AuthServiceFactory } from '../services/auth/AuthServiceFactory';
 
 const authService: AuthService = AuthServiceFactory.createAuthService(
-	process.env.AUTH_SERVICE || "local",
+	process.env.AUTH_SERVICE || 'local',
 );
 
 export const authMiddleware = async (
@@ -11,21 +11,21 @@ export const authMiddleware = async (
 	res: Response,
 	next: NextFunction,
 ) => {
-	const authHeader = req.headers["authorization"];
+	const authHeader = req.headers['authorization'];
 	if (!authHeader) {
-		return res.status(401).send("Unauthorized");
+		return res.status(401).send('Unauthorized');
 	}
 
-	const token = authHeader.split(" ")[1];
+	const token = authHeader.split(' ')[1];
 
 	try {
 		const isValid = await authService.verifyToken(token);
 		if (isValid) {
 			next();
 		} else {
-			res.status(401).send("Unauthorized");
+			res.status(401).send('Unauthorized');
 		}
 	} catch (error) {
-		res.status(500).send("Internal Server Error");
+		res.status(500).send('Internal Server Error');
 	}
 };

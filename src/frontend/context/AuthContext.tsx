@@ -1,7 +1,7 @@
 // src/context/AuthContext.tsx
-import React, { createContext, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthService } from "../services/AuthService";
+import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthService } from '../services/AuthService';
 
 interface AuthContextType {
 	token: string | null;
@@ -23,7 +23,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
 	const [token, setToken] = useState<string | null>(
-		localStorage.getItem("token"),
+		localStorage.getItem('token'),
 	);
 	const navigate = useNavigate();
 	const authService = new AuthService();
@@ -31,18 +31,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 	const login = async (username: string, password: string) => {
 		try {
 			const token = await authService.login(username, password);
-			localStorage.setItem("token", token);
+			localStorage.setItem('token', token);
 			setToken(token);
 		} catch (error) {
-			console.error("Login failed", error);
+			console.error('Login failed', error);
 			throw error;
 		}
 	};
 
 	const logout = () => {
-		localStorage.removeItem("token");
+		localStorage.removeItem('token');
 		setToken(null);
-		navigate("/login");
+		navigate('/login');
 	};
 
 	const isAuthenticated = token !== null;

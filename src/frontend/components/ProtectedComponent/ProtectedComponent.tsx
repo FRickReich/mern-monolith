@@ -1,5 +1,5 @@
-import React from "react";
-import { useAuth } from "../../context/AuthContext";
+import React from 'react';
+import { useAuth } from '../../context/AuthContext';
 
 const ProtectedComponent: React.FC = () => {
 	const { isAuthenticated } = useAuth();

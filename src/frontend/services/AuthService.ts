@@ -1,6 +1,6 @@
 // src/services/AuthService.ts
-import axios from "axios";
-import { jwtDecode } from "jwt-decode";
+import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
 interface AuthResponse {
 	token: string;
@@ -9,13 +9,13 @@ interface AuthResponse {
 export class AuthService {
 	async login(username: string, password: string): Promise<string> {
 		try {
-			const response = await axios.post<AuthResponse>("/auth/login", {
+			const response = await axios.post<AuthResponse>('/auth/login', {
 				username,
 				password,
 			});
 			return response.data.token;
 		} catch (error) {
-			throw new Error("Login failed");
+			throw new Error('Login failed');
 		}
 	}
 

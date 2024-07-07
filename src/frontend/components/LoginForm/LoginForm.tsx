@@ -52,19 +52,19 @@
 // export default LoginForm;
 
 // src/components/LoginForm/LoginForm.tsx
-import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const LoginForm: React.FC = () => {
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
 	const [error, setError] = useState<string | null>(null);
 	const navigate = useNavigate();
 	const location = useLocation();
 	const { login } = useAuth();
 
-	const from = (location.state as { from?: Location })?.from?.pathname || "/";
+	const from = (location.state as { from?: Location })?.from?.pathname || '/';
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -73,8 +73,8 @@ const LoginForm: React.FC = () => {
 			setError(null);
 			navigate(from, { replace: true });
 		} catch (error) {
-			setError("Login failed. Please check your credentials.");
-			console.error("Login failed", error);
+			setError('Login failed. Please check your credentials.');
+			console.error('Login failed', error);
 		}
 	};
 
