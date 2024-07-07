@@ -16,7 +16,10 @@ module.exports = {
     ],
     plugins: ['prettier'],
     rules: {
-      'prettier/prettier': ['error', { useTabs: true, tabWidth: 4 }],
+      "@typescript-eslint/quotes": ["error", "single"],
+      'prettier/prettier': [
+        'error', { useTabs: true, tabWidth: 4, "singleQuote": true },
+      ],
       // Hier können spezifische Regeln für Express.js hinzugefügt werden
     },
   };
