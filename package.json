@@ -1,6 +1,6 @@
 {
   "name": "monolith-2",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Fullstack Application with React frontend and Express.js backend using TypeScript.",
   "main": "index.js",
   "scripts": {
@@ -41,8 +41,7 @@
     "docs": "yarn run clean:docs && yarn run docs:frontend && yarn run docs:backend",
     "commit": "git-cz",
     "release": "standard-version",
-    "storybook": "storybook dev -p 6006",
-    "chromatic": "npx chromatic --project-token=chpt_0cb9a2e43ab55c3"
+    "storybook": "storybook dev -p 6006"
   },
   "keywords": [],
   "author": "",
