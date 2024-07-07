@@ -5,3 +5,4 @@
 /.env
 /*storybook.log
 /public/bundle.*
+/build
