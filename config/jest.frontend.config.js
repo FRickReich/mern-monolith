@@ -6,6 +6,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  "testEnvironment": "jsdom",
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
@@ -14,9 +15,16 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: ['<rootDir>/**/*.{ts,tsx}', '!<rootDir>/jest.setup.ts', '!<rootDir>/index.tsx'],
   coverageDirectory: '<rootDir>/../../coverage/frontend',
-  globals: {
-    'ts-jest': {
-      tsconfig: './config/tsconfig.frontend.json',
-    },
-  },
+  // globals: {
+  //   'ts-jest': {
+  //     tsconfig: './config/tsconfig.frontend.json',
+  //   },
+  // },
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest', {
+        tsconfig: './config/tsconfig.frontend.json',
+      },
+    ]
+  }
 };

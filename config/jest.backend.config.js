@@ -10,9 +10,16 @@ module.exports = {
   collectCoverage: false,
   collectCoverageFrom: ['<rootDir>/**/*.{ts,tsx}'],
   coverageDirectory: '<rootDir>/../../coverage/backend',
-  globals: {
-    'ts-jest': {
-      tsconfig: './config/tsconfig.backend.json',
-    },
-  },
+  // globals: {
+  //   'ts-jest': {
+  //     tsconfig: './config/tsconfig.backend.json',
+  //   },
+  // },
+  transform: {
+    '^.+\\.ts?$': [
+      'ts-jest', {
+        tsconfig: './config/tsconfig.backend.json',
+      },
+    ]
+  }
 };
